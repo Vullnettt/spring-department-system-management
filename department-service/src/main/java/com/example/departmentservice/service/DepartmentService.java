@@ -169,7 +169,7 @@ public class DepartmentService {
             ProductResponse productResponse = restTemplate.getForObject("http://product-service/api/product/" +
                             department.getSkuCode(),
                     ProductResponse.class
-            );//everytime costumer buy a product delete one quantity
+            );
         if(findProductIfIsInStock(skuCode)) {
             for(int i = 1; i >= 1; i --) {
                 productResponse.setQuantity(productResponse.getQuantity() - i);
